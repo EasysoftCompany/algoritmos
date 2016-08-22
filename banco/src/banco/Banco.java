@@ -24,6 +24,12 @@ public class Banco {
      */
     public static void main(String[] args) {
 
+            System.out.println("*****************************************");
+            System.out.println("\t Calculador de Billetes y monedas");
+            System.out.println("*****************************************");
+            
+            
+            System.out.println("\n\n Que cantidad desea calcular?: \t");
         Scanner scan = new Scanner(System.in);
 
         int[] valores = new int[9];
@@ -32,12 +38,8 @@ public class Banco {
         int eval = scan.nextInt();
 
         for (int x = 0; x < value.length; x++) {
-
-            int cont = eval % value[x];
-            if (cont == 0) {                
-                valores[x] = eval/value[x];
-                eval = eval - (valores[x]*value[x]);
-            }
+                valores[x] = (int) eval/value[x];
+                eval = eval - (valores[x]*value[x]);        
         }
         
         for (int x=0; x<value.length;x++)
