@@ -32,7 +32,7 @@ public class Dados {
         in.nextLine();
 
         Random ran = new Random();
-        int dado1 = 1 + ran.nextInt(6);
+        int dado1 = 1 + ran.nextInt(6);       
         int dado2 = 1 + ran.nextInt(6);
 
         switch (dado1) {
