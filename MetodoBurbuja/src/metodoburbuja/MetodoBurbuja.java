@@ -1,24 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package metodoburbuja;
 
 import java.util.Random;
 
-/**
- *
- * @author PC-
- */
 public class MetodoBurbuja {
 
-    /**
-     * @param args the command line arguments
-     */
-    final static int limite = 1000;
-    static int comparaciones = 1000;
-    static int intercambios = 1000;
+    final static int limite = 10;
+    static long comparaciones = 0;
+    static long intercambios = 0;
 
     public static void main(String[] args) {
 
@@ -30,24 +18,27 @@ public class MetodoBurbuja {
             datos[i] = ran.nextInt(1000);
         }
 
+        long time_start, time_end;
+        time_start = System.currentTimeMillis();
         burbuja(datos);
-        
-          int contador = 0;
-        for(int i = 0; i<limite;i++)
-        {
-            if(contador == 20){
+        time_end = System.currentTimeMillis();
+
+        int contador = 0;
+        for (int i = 0; i < limite; i++) {
+            if (contador == 20) {
                 System.out.print("\n");
                 contador = 0;
             }
-            
-            System.out.print("\t"+datos[i]);
-            contador ++;
-        }    
-        
-        System.out.println("\n\nHabia "+ limite + " Datos");
+
+            System.out.print("\t" + datos[i]);
+            contador++;
+        }
+
+        System.out.println("\n\nLa tarea se completo en aproximandamente: " + ((time_end - time_start)) + " miliegundos");
+        System.out.println("Habia " + limite + " Datos");
         System.out.println("Se realizaron " + comparaciones + " comparaciones");
         System.out.println("Se realizaron " + intercambios + " intercambios");
-        
+
     }
 
     public static void burbuja(int[] A) {
